@@ -28,11 +28,11 @@ namespace c_letter_remover_practice_KrisztinaPap
 
             // Prompt user for string and save it into a variable
             Console.WriteLine("Enter the string you want to modify, {0}:", userName);
-            userString = Console.ReadLine();
+            userString = Console.ReadLine().ToLower(); 
 
             // Prompt user for a character and save it into a variable
             Console.WriteLine("Enter the character you wish to remove from your string, {0}:", userName);
-            userChar = char.Parse(Console.ReadLine());
+            userChar = char.Parse(Console.ReadLine().ToLower());
 
             Console.WriteLine("Here's your new string, {0}:", userName);
 
