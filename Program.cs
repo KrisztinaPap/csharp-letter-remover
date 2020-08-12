@@ -21,31 +21,40 @@ namespace c_letter_remover_practice_KrisztinaPap
             string userString = "";
             char userChar;
             string userName;
+            int action;
 
             // Prompt user for their name and save it into a variable
             Console.WriteLine("Enter your name:");
-            userName = Console.ReadLine();
+            userName = Console.ReadLine().Trim();
 
-            // Prompt user for string and save it into a variable
-            Console.WriteLine("Enter the string you want to modify, {0}:", userName);
-            userString = Console.ReadLine().ToLower(); 
-
-            // Prompt user for a character and save it into a variable
-            Console.WriteLine("Enter the character you wish to remove from your string, {0}:", userName);
-            userChar = char.Parse(Console.ReadLine().ToLower());
-
-            Console.WriteLine("Here's your new string, {0}:", userName);
-
-            // Remove the character from the string and save result into a new string
-            for ( int i = 0; i < userString.Length ; i++ )
+            do
             {
-                // Check each string letter to see if it's the same as the character
-                if ( userString[i] != userChar )
+                // Prompt user for string and save it into a variable
+                Console.WriteLine("Enter the string you want to modify, {0}:", userName);
+                userString = Console.ReadLine().ToLower().Trim(); 
+
+                // Prompt user for a character and save it into a variable
+                Console.WriteLine("Enter the character you wish to remove from your string, {0}:", userName);
+                userChar = char.Parse(Console.ReadLine().ToLower());
+
+                Console.WriteLine("Here's your new string, {0}:", userName);
+
+                // Remove the character from the string and save result into a new string
+                for ( int i = 0; i < userString.Length ; i++ )
                 {
-                    // Return new string
-                    Console.Write(userString[i]);
-                }   
-            }
+                    // Check each string letter to see if it's the same as the character
+                    if ( userString[i] != userChar )
+                    {
+                        // Return new string
+                        Console.Write(userString[i]);
+                    }   
+                }
+                Console.WriteLine(" ");
+                Console.WriteLine("What would you like to do next?\n-------------------\n1. Start again\n2. Quit program");
+                action = int.Parse(Console.ReadLine());
+
+            } while ( action != 2 );
+                
         } 
     }
 }
