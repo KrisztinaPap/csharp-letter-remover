@@ -19,9 +19,13 @@ namespace c_letter_remover_practice_KrisztinaPap
 
             // Declare variables
             string userString = "";
+            string userInput = "";
             char userChar;
             string userName;
             int action;
+            bool doesItContain = false;
+            int charsIndex;
+            string newString = "";
 
             // Prompt user for their name and save it into a variable
             Console.WriteLine("Enter your name:");
@@ -35,19 +39,38 @@ namespace c_letter_remover_practice_KrisztinaPap
 
                 // Prompt user for a character and save it into a variable
                 Console.WriteLine("Enter the character you wish to remove from your string, {0}:", userName);
-                userChar = char.Parse(Console.ReadLine().ToLower());
+                userInput = Console.ReadLine().ToLower();
 
-                Console.WriteLine("Here's your new string, {0}:", userName);
+                // Is it one or more characters?
+                if ( userInput.Length == 1 ){
+                    userChar = char.Parse(userInput);
 
-                // Remove the character from the string and save result into a new string
-                for ( int i = 0; i < userString.Length ; i++ )
-                {
-                    // Check each string letter to see if it's the same as the character
-                    if ( userString[i] != userChar )
+                    Console.WriteLine("Here's your new string, {0}:", userName);
+
+                    for ( int i = 0; i < userString.Length ; i++ )
                     {
-                        // Return new string
-                        Console.Write(userString[i]);
-                    }   
+                        // Check each string letter to see if it's the same as the character
+                        if ( userString[i] != userChar )
+                        {
+                            // Return new string
+                            Console.Write(userString[i]);
+                        }   
+                    }
+                }
+                else 
+                {
+                    // Citation:
+                    //      https://www.geeksforgeeks.org/c-sharp-string-contains-method/
+                    //      The below line of code checks if the user string actually contains the characters to be removed
+                    doesItContain = userString.Contains(userInput);
+
+                    // Citation:
+                    //      https://www.c-sharpcorner.com/uploadfile/mahesh/add-remove-replace-strings-in-C-Sharp/
+                    //      The below line of code finds the index where we need to start removing from
+                    charsIndex = userString.IndexOf(userInput);
+                    //      The below line of code removes the userInput from the userString (starts at the index calculated below and continues for the lengths of the input)
+                    newString = userString.Remove(charsIndex, userInput.Length);
+                    Console.WriteLine("Here's your new string, {0}:\n{1}", userName, newString);
                 }
                 Console.WriteLine(" ");
                 Console.WriteLine("What would you like to do next?\n-------------------\n1. Start again\n2. Quit program");

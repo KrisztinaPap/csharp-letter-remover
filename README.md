@@ -15,7 +15,8 @@ August 12, 2020
 https://trello.com/b/5ZSKbeBs/c-letter-remover-practice
 
 ## Resources:
-
+[C-sharpcorner](https://www.c-sharpcorner.com/uploadfile/mahesh/add-remove-replace-strings-in-C-Sharp/)
+[Geeksforgeeks.org](https://www.geeksforgeeks.org/c-sharp-string-contains-method/)
 
 
 
