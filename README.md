@@ -3,7 +3,7 @@
 This app is not for distribution and I do not accept pull requests. Thank you!
 
 ## Problem/Purpose: 
-Practising comparison operators, data types, type conversion, loops, I/O, and decisions in C#. The program prompts the user for a string and a character. It returns the string without the chosen character. 
+Practicing comparison operators, data types, type conversion, loops, I/O, and decisions in C#. The program prompts the user for a string and a character. It returns the string without the chosen character. 
 
 ## Author:
 Krisztina Pap
